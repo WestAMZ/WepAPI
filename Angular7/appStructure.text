@@ -1,0 +1,19 @@
+•src
++--• app
+|  +--• employees
+|  |  |--• employees.component.ts|.html|.css
+|  |   employees.component.ts|.html|.css
+|  |
+|  |
+|  |
+|  |
+|  |
+|  |
+|  |
+index.html
+○ Crear controlador
+    commands ng g c <(ruta) nombre controlador>
+○ Crear servicio
+    commands ng g s <(ruta) nombre servicio>
+○ Crear clase modelo
+    commands ng g cl <(ruta) nombre servicio> --type=model
