@@ -1,3 +1,28 @@
-<p>
-  employee works!
-</p>
+<form #form="ngForm">
+  <div class="form-group">
+    <label>FULL NAME</label>
+    <!-- Doble binding con propiedad dataForm  en employees.service.ts-->
+    <input type="text" class="form-control" name="FullName" 
+    #FullName = "ngModel"  [(ngModel)]="service.formData.FullName">
+  </div>
+  <div class="form-group">
+    <label>POSITION</label>
+    <input type="text" class="form-control" name="Position" 
+    #Position = "ngModel"  [(ngModel)]="service.formData.Position">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>EMPCode</label>
+      <input type="text" class="form-control" name="EMPCode" 
+      #EMPCode = "ngModel"  [(ngModel)]="service.formData.EMPCode">
+    </div>
+    <div class="form-group">
+      <label>MOBILE</label>
+      <input type="text" class="form-control  col-md-6" name="Mobile" 
+      #Mobile = "ngModel"  [(ngModel)]="service.formData.Mobile">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+  </div>
+</form>
