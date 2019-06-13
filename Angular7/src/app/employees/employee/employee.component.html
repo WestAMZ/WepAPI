@@ -3,7 +3,9 @@
     <label>FULL NAME</label>
     <!-- Doble binding con propiedad dataForm  en employees.service.ts-->
     <input type="text" class="form-control" name="FullName" 
-    #FullName = "ngModel"  [(ngModel)]="service.formData.FullName">
+    #FullName = "ngModel"  [(ngModel)]="service.formData.FullName" 
+    class="form-control" required>
+    <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>
   </div>
   <div class="form-group">
     <label>POSITION</label>

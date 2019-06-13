@@ -23,11 +23,11 @@ export class EmployeeComponent implements OnInit {
       form.resetForm();
     }
     this.service.formData = {
-        EmployeeID = null,
-        FullName = '',
-        Position = '',
-        EMPCode = '',
-        Mobile = ''
+        EmployeeID : null,
+        FullName : '',
+        Position : '',
+        EMPCode : '',
+        Mobile : ''
     }
   }
 
