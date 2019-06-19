@@ -30,5 +30,16 @@ export class EmployeeComponent implements OnInit {
         Mobile : ''
     }
   }
-
+  //Recepción de envio de formulario
+  onSubmit(form : NgForm)
+  {
+    this.insertReord(form);
+  }
+  //Función de insertado
+  insertReord(form:NgForm)
+  {
+    this.service.postEmployee(form.value).subscribe(res=>{
+        
+    });
+  }
 }

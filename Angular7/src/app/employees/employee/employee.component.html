@@ -1,11 +1,10 @@
-<form #form="ngForm" autocomplete="off">
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
   <div class="form-group">
     <label>FULL NAME</label>
     <!-- Doble binding con propiedad dataForm  en employees.service.ts-->
     <input type="text" class="form-control" name="FullName" 
-    #FullName = "ngModel"  [(ngModel)]="service.formData.FullName" 
-    class="form-control" required>
-    <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>
+    #FullName = "ngModel"  [(ngModel)]="service.formData.FullName" required>
+    <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required</div>
   </div>
   <div class="form-group">
     <label>POSITION</label>
@@ -25,6 +24,7 @@
     </div>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-outline-primary btn-block btn-lg">SUBMIT</button>
+    <!-- Desabilidamos el submit mientras el formulario no sea valido -->
+    <button type="submit" [disabled]="form.invalid" class="btn  btn-block btn-lg">SUBMIT</button>
   </div>
 </form>
