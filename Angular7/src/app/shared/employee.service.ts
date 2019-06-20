@@ -8,7 +8,7 @@ import { HttpClient} from "@angular/common/http"
 export class EmployeeService {
   //Declaración de propieada formData de tipo Employee
   formData : Employee;
-  read rootURL = "http://localhost:34824/api"
+  readonly rootURL = "http://localhost:34824/api";
 
   constructor(private http : HttpClient) {}
 
