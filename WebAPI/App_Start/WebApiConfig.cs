@@ -14,7 +14,7 @@ namespace WebAPI
         public static void Register(HttpConfiguration config)
         {
             //Enable CORS
-            config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers: "*",methods:" * "));
+            config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers: "*",methods:"*"));
 
             // Configuración y servicios de Web API
             // Configure Web API para usar solo la autenticación de token de portador.

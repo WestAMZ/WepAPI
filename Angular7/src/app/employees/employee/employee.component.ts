@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/shared/employee.service';
 import { NgForm } from '@angular/forms';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-employee',
@@ -9,7 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private service :EmployeeService) { }
+  constructor(private service :EmployeeService,
+              private  toastr: ToastrService) { }
 
   ngOnInit() {
     //Calling the reset form method that is below
@@ -33,13 +35,14 @@ export class EmployeeComponent implements OnInit {
   //Recepción de envio de formulario
   onSubmit(form : NgForm)
   {
-    this.insertReord(form);
+    this.insertRecord(form);
   }
   //Función de insertado
-  insertReord(form:NgForm)
+  insertRecord(form:NgForm)
   {
     this.service.postEmployee(form.value).subscribe(res=>{
-        
+      this.toastr.success("Inserted succesfully","EMP. Register")
+      this.resetForm(form);
     });
   }
 }
