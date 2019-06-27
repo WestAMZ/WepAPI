@@ -1,4 +1,6 @@
 <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="EmployeeID" 
+  #EmployeeID = "ngModel"  [(ngModel)]="service.formData.EmployeeID">
   <div class="form-group">
     <label>FULL NAME</label>
     <!-- Doble binding con propiedad dataForm  en employees.service.ts-->

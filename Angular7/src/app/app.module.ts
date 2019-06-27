@@ -11,6 +11,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { EmployeeService } from './shared/employee.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EmployeeService } from './shared/employee.service';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,// required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    AngularFontAwesomeModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
