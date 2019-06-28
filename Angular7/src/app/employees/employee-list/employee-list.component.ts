@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(private service:EmployeeService) { }
+  constructor(private service:EmployeeService,private toastr:ToastrService) { }
 
   ngOnInit() {
     this.service.refreshList();
@@ -19,5 +19,12 @@ export class EmployeeListComponent implements OnInit {
     this.service.formData = Object.assign({},emp);
     //De esta forma los cambios desde el formulario se cargan instantaneamente en la tabla (solo visualización)
     //this.service.formData = emp;
+  }
+  onDelete(id:number)
+  {
+    this.service.deleteEmployee(id).subscribe(res=>
+      {
+          this.service.refreshList();
+      });
   }
 }

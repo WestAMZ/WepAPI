@@ -17,7 +17,7 @@
       <th scope="row" (click)="populateForm(emp)">{{emp.EMPCode}} - {{emp.FullName}}</th>
       <th scope="row" (click)="populateForm(emp)">{{emp.Position}}</th>
       <th scope="row" (click)="populateForm(emp)">{{emp.Mobile}}</th>
-      <th scope="row" ><button class="btn btn-danger"><fa name="trash"></fa></button></th>
+      <th scope="row" ><button (click)="onDelete(emp.EmplyeeID)" class="btn btn-danger"><fa name="trash"></fa></button></th>
       <th scope="row" ><button class="btn btn-primary"><fa name="edit"></fa></button></th>
     </tr>
   </tbody>

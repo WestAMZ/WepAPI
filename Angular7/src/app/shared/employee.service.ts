@@ -28,4 +28,8 @@ export class EmployeeService {
   {
     return this.http.put(this.rootURL + "/Employees/"+formData.EmployeeID,formData);
   }
+  deleteEmployee(id:number)
+  {
+    return this.http.delete(this.rootURL + "/Employees/"+id);
+  }
 }
