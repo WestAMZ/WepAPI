@@ -24,7 +24,7 @@ namespace WebAPI.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("West", throwIfV1Schema: false)
+            : base("MS", throwIfV1Schema: false)
         {
             
         }
